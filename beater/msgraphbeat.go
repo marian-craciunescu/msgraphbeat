@@ -219,7 +219,10 @@ func (msgb *msgraphbeat) securityAlerts() ([]common.MapStr, error) {
 	mapStrArr := make([]common.MapStr, 0)
 	lastProcessed, err := msgb.getRegistry()
 	if err == errFirstStart {
-		lastProcessed = msgb.config.StartDate
+		lastProcessed, err = time.Parse(time.RFC3339, msgb.config.StartDate)
+		if err != nil {
+			return nil, err
+		}
 	} else if err != nil {
 		return nil, err
 	}

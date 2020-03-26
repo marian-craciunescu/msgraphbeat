@@ -11,12 +11,12 @@ type Config struct {
 	ClientID         string        `config:"client_id"`
 	TenantID         string        `config:"tenant_id"`
 	RegistryFilePath string        `config:"registry_file_path"`
-	StartDate        time.Time     `config:"start_date"`
+	StartDate        string        `config:"start_date"`
 }
 
 var DefaultConfig = Config{
 	Period:           10 * time.Minute,
 	RegistryFilePath: "./msgraph.state",
 	//get Last 90 days
-	StartDate: time.Now().Add(-(7 * 24) * time.Hour),
+	StartDate: time.Now().Add(-(7 * 24) * time.Hour).UTC().Format(time.RFC3339),
 }
