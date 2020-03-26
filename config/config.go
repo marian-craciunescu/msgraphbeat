@@ -6,9 +6,17 @@ package config
 import "time"
 
 type Config struct {
-	Period time.Duration `config:"period"`
+	Period           time.Duration `config:"period"`
+	Secret           string        `config:"client_secret"`
+	ClientID         string        `config:"client_id"`
+	TenantID         string        `config:"tenant_id"`
+	RegistryFilePath string        `config:"registry_file_path"`
+	StartDate        time.Time     `config:"start_date"`
 }
 
 var DefaultConfig = Config{
-	Period: 1 * time.Second,
+	Period:           10 * time.Minute,
+	RegistryFilePath: "./msgraph.state",
+	//get Last 90 days
+	StartDate: time.Now().Add(-(7 * 24) * time.Hour),
 }

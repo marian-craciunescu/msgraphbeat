@@ -28,6 +28,8 @@ require (
 	github.com/prometheus/procfs v0.0.11 // indirect
 	github.com/rcrowley/go-metrics v0.0.0-20200313005456-10cdbea86bc0 // indirect
 	github.com/reviewdog/reviewdog v0.9.17
+	github.com/stretchr/testify v1.4.0
+	github.com/yaegashi/msgraph.go v0.1.2 // indirect
 	go.uber.org/zap v1.14.1 // indirect
 	golang.org/x/lint v0.0.0-20191125180803-fdd1cda4f05f
 	golang.org/x/sys v0.0.0-20200323222414-85ca7c5b95cd // indirect
