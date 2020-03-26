@@ -1,0 +1,15 @@
+################### {Beat} Configuration Example #########################
+
+############################# {Beat} ######################################
+
+msgraphbeat:
+  # Defines how often an event is sent to the output
+  period: 1s
+  tenant_id: ""
+  client_id: ""
+  client_secret: ""
+  start_date: "2020-03-26T16:26:39Z"
+  registry_file_path": "./reg"
+
+output.console:
+  pretty: true
